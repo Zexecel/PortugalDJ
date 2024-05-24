@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portugal DJ</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="visualizer" class="visualizer"></canvas>
+  <header>
+    <img src="assets/images/flag.png" alt="Portuguese Flag" id="flag">
+    <h1>Portugal DJ</h1>
+  </header>
+  <main>
+    <div class="turntable-container">
+      <div class="turntable">
+        <div class="disc" id="disc1"></div>
+        <div class="controls">
+          <select id="track1">
+            <option value="assets/audio/ta-turbinada.mp3">ta turbinada</option>
+            <option value="assets/audio/senhor-senhor.mp3">senhor senhor</option>
+            <option value="assets/audio/deixei-tudo-por-ela.mp3">deixei tudo por ela</option>
+            <option value="assets/audio/pao-com-manteiga.mp3">pao com manteiga</option>
+            <option value="assets/audio/ja-nao-doi.mp3">já nao doi</option>
+            <option value="assets/audio/filho-do-recluso.mp3">filho do recluso</option>
+            <option value="assets/audio/o-bacalhau-quer-alho.mp3">o bacalhau quer alho</option>
+            <option value="assets/audio/obrigado-jose-socrates.mp3">obrigado josé socrates</option>
+            <option value="assets/audio/fui-cagar-ao-cemiterio.mp3">fui cagar ao cemiterio</option>
+            <option value="assets/audio/freaky.mp3">freaky</option>
+            <option value="assets/audio/o-preco-certo.mp3">o preço certo</option>
+          </select>
+          <button onclick="loadTrack('track1')">Load</button>
+          <button onclick="playTrack('track1')">Play</button>
+          <button onclick="pauseTrack('track1')">Pause</button>
+          <button onclick="stopTrack('track1')">Stop</button>
+          <input type="range" id="volume1" min="0" max="1" step="0.01" onchange="changeVolume('track1')">
+        </div>
+      </div>
+      <div class="turntable">
+        <div class="disc" id="disc2"></div>
+        <div class="controls">
+          <select id="track2">
+            <option value="assets/audio/ta-turbinada.mp3">ta turbinada</option>
+            <option value="assets/audio/senhor-senhor.mp3">senhor senhor</option>
+            <option value="assets/audio/deixei-tudo-por-ela.mp3">deixei tudo por ela</option>
+            <option value="assets/audio/pao-com-manteiga.mp3">pao com manteiga</option>
+            <option value="assets/audio/ja-nao-doi.mp3">já nao doi</option>
+            <option value="assets/audio/filho-do-recluso.mp3">filho do recluso</option>
+            <option value="assets/audio/o-bacalhau-quer-alho.mp3">o bacalhau quer alho</option>
+            <option value="assets/audio/obrigado-jose-socrates.mp3">obrigado josé socrates</option>
+            <option value="assets/audio/fui-cagar-ao-cemiterio.mp3">fui cagar ao cemiterio</option>
+            <option value="assets/audio/freaky.mp3">freaky</option>
+            <option value="assets/audio/o-preco-certo.mp3">o preço certo</option>
+          </select>
+          <button onclick="loadTrack('track2')">Load</button>
+          <button onclick="playTrack('track2')">Play</button>
+          <button onclick="pauseTrack('track2')">Pause</button>
+          <button onclick="stopTrack('track2')">Stop</button>
+          <input type="range" id="volume2" min="0" max="1" step="0.01" onchange="changeVolume('track2')">
+        </div>
+      </div>
+    </div>
+    <div class="crossfade-controls">
+      <label for="crossfade">Crossfade</label>
+      <input type="range" id="crossfade" min="0" max="1" step="0.01" onchange="crossfade()">
+      <button onclick="applyFilter('lowpass')">Low Pass Filter</button>
+      <button onclick="applyFilter('highpass')">High Pass Filter</button>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
